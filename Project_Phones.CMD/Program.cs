@@ -57,6 +57,13 @@ namespace Project_Phones.CMD
         {
             Console.Clear();
             Console.WriteLine("Выберите название и нажмите Enter:");
+            //Если список смартфонов пуст, возвращаемся в меню
+            if (phones_ctrl.Phones.Count == 0)
+            {
+                Console.WriteLine("Список смартфонов пуст. Нажмите Enter чтобы продолжить.");
+                Console.ReadLine();
+                return;
+            }
             for (int i = 0; i < phones_ctrl.Phones.Count; i++)
             {
                 Console.WriteLine($"{i + 1} - {phones_ctrl.Phones[i]}");
